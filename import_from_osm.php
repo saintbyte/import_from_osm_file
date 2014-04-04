@@ -96,7 +96,7 @@ while (!feof($file))
        {
            $k = get_part1($line,'k="','"');
            $v = get_part1($line,'v="','"');
-           tag_for_relation_store($relation_id,$k,$v);
+           tag_for_relation_store($own_relation_id,$k,$v);
        }
        if (strpos($line,'<member') !== false)
        {
