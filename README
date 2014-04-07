@@ -10,4 +10,21 @@
 Версия Mysql
 Например запросом SELECT DISTINCT  node_id FROM tag_relation вы можете оценить количество нодов с тагами
 
+SELECT tag_relation . * , tags.name, tag_values.value
+FROM  `tag_relation` 
+LEFT JOIN tag_values ON tag_relation.tag_value_id = tag_values.id
+LEFT JOIN tags ON tag_relation.tag_id = tags.id
+WHERE  `relation_id` IS NOT NULL 
+AND  `tag_id` =3
 
+
+SELECT 
+relations_members.* ,
+nodes.*
+FROM relations_members
+LEFT JOIN ways_nodes ON relations_members.way_id = ways_nodes.way_id
+LEFT JOIN nodes ON ways_nodes.node_id = nodes.node_id
+WHERE 
+relations_members.own_relation_id=79379 
+AND
+relations_members.way_id != 0
