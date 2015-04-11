@@ -29,7 +29,7 @@ $kml_template .= '<coordinates>'."\r\n";
 $alt = '2000';
 while ($row = mysql_fetch_array($qh, MYSQL_ASSOC)) 
 {
-$kml_template .= $row['lon'].','.$row['latM@M@'].','.$alt."\r\n";
+$kml_template .= $row['lon'].','.$row['lat'].','.$alt."\r\n";
 }
 $kml_template .= '</coordinates>'."\r\n";
 $kml_template .= '</LineString>'."\r\n";
